@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="add()">add</button>
+    <button onclick="hello()">greetings</button>
+</body>
+<script>
+    function add(){
+      number1= document.getElementById('num1').value
+      number2= document.getElementById('num2').value
+      var sum
+      sum=Number(number1)+Number(number2)
+      console.log(sum)
+}
+   function hello(){
+    text=document.getElementById('num1').value
+    alert('hello ' +text+', good morning')
+   }
+</script>
+</html>

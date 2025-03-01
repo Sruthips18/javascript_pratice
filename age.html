@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input type="text" placeholder="enter name" id="name_input" onkeyup="enable()"><br>
+     <input type="text" placeholder="enter age" id="age_input" onkeyup="enable()"><br>
+     <span id="message"></span><br>
+     <button onclick="eligibility()"disabled  id="validate_btn">validate</button>
+     <button onclick="clearclick()" disabled id="clear_btn">clear</button><br>
+
+     <script>
+        function eligibility(){
+           name = document.getElementById('name_input').value
+           age = document.getElementById('age_input').value
+           msg = document.getElementById('message') 
+           if (age > 30){
+               eligible = 'not eligible'
+               color = 'red'
+           } else {
+               eligible = 'eligible'
+               color = 'green'
+           }
+           msg.innerHTML = name+ ' you are <span style="color:'+color+'">'  + eligible
+        }
+        function clearclick(){
+           name = document.getElementById('name_input').value
+           age = document.getElementById('age_input').value
+           msg = document.getElementById('message')
+   
+           document.getElementById('name_input').value = ''
+           document.getElementById('age_input').value = ''
+           msg.innerHTML = ''
+           
+           document.getElementById('validate_btn').disabled = true
+           document.getElementById('clear_btn').disabled = true
+        }
+   
+        function enable(){
+           name = document.getElementById('name_input').value
+           age = document.getElementById('age_input').value
+           
+           if(name !="" && age != ""){
+               document.getElementById('validate_btn').disabled = false
+              document.getElementById('clear_btn').disabled = false
+           }
+       }
+   
+   </script>
+</body>
+</html>
